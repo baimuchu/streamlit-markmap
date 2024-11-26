@@ -11,9 +11,12 @@ def markmap(data, height=600):
             </style>'''.format(height)
     markdown_html = f'''
         {markdown_style}
-        <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader"></script>
-            
-        <div class='markmap'>{data}</div>
+        <div class="markmap">
+            <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader@latest"></script>
+            <script type="text/template">
+                {data}
+            </script>
+        </div>
     '''
 
     markmap_component = components.html(markdown_html, height=height)
